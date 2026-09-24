@@ -1,7 +1,5 @@
+import WeatherPage from "./features/weather/weather-page";
+
 export default function App() {
-  return (
-    <div>
-      <h1>Hello master</h1>
-    </div>
-  );
+  return <WeatherPage />;
 }
