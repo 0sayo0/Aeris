@@ -6,4 +6,7 @@ const envSchema = z.object({
     .min(1, "VITE_OPENWEATHER_API_KEY is required"),
 });
 
-export const env = envSchema.parse(import.meta.env);
+export const env = envSchema.parse(
+  import.meta.env,
+); /* Validate import.meta.env using envSchema
+and if it's okay, return the validated data.v */

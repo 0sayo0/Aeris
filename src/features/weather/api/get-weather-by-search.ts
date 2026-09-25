@@ -8,5 +8,5 @@ export async function getWeatherBySearch(
 ): Promise<Weather> {
   const coordinates = await getCoordinates(search);
 
-  return getCurrentWeather(coordinates);
+  return getCurrentWeather(coordinates); //The function type already specifies the Promise. (Promise<Weather>)
 }
