@@ -123,9 +123,15 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-slate-950 text-foreground;
+    min-height: 100dvh;
   }
   html {
-    @apply font-sans;
+    @apply bg-slate-950 font-sans;
+    scrollbar-gutter: stable;
+  }
+
+  #root {
+    min-height: 100dvh;
   }
 }

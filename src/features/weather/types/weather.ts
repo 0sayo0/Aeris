@@ -7,5 +7,5 @@ export type Weather = {
   humidity: number;
   condition: string;
   description: string;
-  icon: string;
+  iconUrl: string;
 };

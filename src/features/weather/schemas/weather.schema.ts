@@ -1,8 +1,6 @@
 import { z } from "zod";
 
 export const weatherResponseSchema = z.object({
-  name: z.string(),
-
   main: z.object({
     temp: z.number(),
     feels_like: z.number(),
