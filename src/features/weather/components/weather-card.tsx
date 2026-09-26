@@ -6,7 +6,7 @@ import {
   ThermometerSun,
 } from "lucide-react";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 import type { Weather } from "@/features/weather/types/weather";
 
@@ -43,9 +43,9 @@ function WeatherCard({ weather }: WeatherCardProps) {
           Clima actual
         </p>
 
-        <CardTitle className="text-2xl font-semibold tracking-tight text-slate-950">
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
           {weather.city}
-        </CardTitle>
+        </h2>
       </CardHeader>
 
       <CardContent className="flex flex-1 flex-col justify-between px-5 pt-2 pb-5 sm:px-6">
