@@ -6,9 +6,11 @@ import type { Weather } from "@/features/weather/types/weather";
 const CURRENT_WEATHER_API_URL =
   "https://api.openweathermap.org/data/2.5/weather";
 
+const WEATHER_ICON_BASE_URL = "https://openweathermap.org/img/wn";
+
 export async function getCurrentWeather(
   coordinates: Coordinates,
-): Promise<Weather> {
+): Promise<Omit<Weather, "city">> {
   const params = new URLSearchParams({
     lat: coordinates.lat.toString(),
     lon: coordinates.lon.toString(),
@@ -32,7 +34,6 @@ export async function getCurrentWeather(
   const currentCondition = weatherResponse.weather[0];
 
   return {
-    city: weatherResponse.name,
     temperature: weatherResponse.main.temp,
     feelsLike: weatherResponse.main.feels_like,
     minTemperature: weatherResponse.main.temp_min,
@@ -40,6 +41,6 @@ export async function getCurrentWeather(
     humidity: weatherResponse.main.humidity,
     condition: currentCondition.main,
     description: currentCondition.description,
-    icon: currentCondition.icon,
+    iconUrl: `${WEATHER_ICON_BASE_URL}/${currentCondition.icon}@2x.png`,
   };
 }

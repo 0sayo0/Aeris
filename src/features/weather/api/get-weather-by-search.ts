@@ -7,6 +7,10 @@ export async function getWeatherBySearch(
   search: WeatherSearch,
 ): Promise<Weather> {
   const coordinates = await getCoordinates(search);
+  const weather = await getCurrentWeather(coordinates);
 
-  return getCurrentWeather(coordinates); //The function type already specifies the Promise. (Promise<Weather>)
+  return {
+    city: search.city,
+    ...weather,
+  };
 }
