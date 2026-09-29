@@ -15,7 +15,7 @@ function WeatherError() {
         </h2>
 
         <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
-          Verifica la ciudad y el país e inténtalo nuevamente.
+          Verifica la ciudad y el país, o inténtalo nuevamente en unos momentos.
         </p>
       </CardContent>
     </Card>

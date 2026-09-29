@@ -1,7 +1,7 @@
 import { CloudSun } from "lucide-react";
 import { useState } from "react";
 
-import weatherBackground from "@/assets/weather-background.jpg";
+import weatherBackground from "@/assets/weather-background.webp";
 import WeatherCard from "@/features/weather/components/weather-card";
 import WeatherError from "@/features/weather/components/weather-error";
 import WeatherSearchForm from "@/features/weather/components/weather-search-form";
@@ -47,11 +47,15 @@ function WeatherPage() {
             </p>
           </header>
 
-          <WeatherSearchForm onSubmit={setSearch} />
+          <WeatherSearchForm
+            onSubmit={setSearch}
+            isLoading={weatherQuery.isLoading}
+          />
 
           {search && (
             <section
               className="mt-6 h-100 sm:h-96"
+              aria-label="Resultado del clima"
               aria-live="polite"
               aria-busy={weatherQuery.isLoading}
             >

@@ -25,6 +25,7 @@ import {
 
 type WeatherSearchFormProps = {
   onSubmit: (search: WeatherSearch) => void;
+  isLoading?: boolean;
 };
 
 const countryItems = COUNTRIES.map((country) => ({
@@ -32,7 +33,10 @@ const countryItems = COUNTRIES.map((country) => ({
   value: country.code,
 }));
 
-function WeatherSearchForm({ onSubmit }: WeatherSearchFormProps) {
+function WeatherSearchForm({
+  onSubmit,
+  isLoading = false,
+}: WeatherSearchFormProps) {
   const {
     register,
     control,
@@ -129,9 +133,11 @@ function WeatherSearchForm({ onSubmit }: WeatherSearchFormProps) {
 
         <Button
           type="submit"
+          disabled={isLoading}
+          aria-busy={isLoading}
           className="h-11 w-full cursor-pointer rounded-xl bg-slate-900 text-white shadow-lg shadow-slate-950/20 transition-all hover:translate-x-0.5 hover:-translate-y-1 hover:bg-slate-800"
         >
-          Consultar clima
+          {isLoading ? "Consultando..." : "Consultar clima"}
         </Button>
       </FieldGroup>
     </form>

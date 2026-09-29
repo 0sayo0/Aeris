@@ -43,7 +43,7 @@ function WeatherCard({ weather }: WeatherCardProps) {
           Clima actual
         </p>
 
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+        <h2 className="max-w-full text-2xl leading-tight font-semibold tracking-tight text-balance text-slate-950">
           {weather.city}
         </h2>
       </CardHeader>

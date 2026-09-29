@@ -87,4 +87,17 @@ describe("WeatherSearchForm", () => {
       country: "ES",
     });
   });
+
+  it("disables the submit button while loading", () => {
+    const onSubmit = vi.fn();
+
+    render(<WeatherSearchForm onSubmit={onSubmit} isLoading />);
+
+    const button = screen.getByRole("button", {
+      name: /consultando/i,
+    });
+
+    expect(button).toBeDisabled();
+    expect(button).toHaveAttribute("aria-busy", "true");
+  });
 });
